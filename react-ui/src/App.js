@@ -22,24 +22,6 @@ class App extends React.Component {
           this.showSucces = this.showSucces.bind(this)
       }
 
-      componentDidMount() {
-          this.fetchWords()
-
-          this.changeForm = (e) => {
-              if(e.keyCode === 17) {
-                this.setState((prev) => ({displayForm: !prev.displayForm}))
-              } else {
-                  return
-              }
-          }
-
-          document.body.addEventListener("keydown", this.changeForm)
-      }
-
-      componentWillUnmount() {
-          document.body.removeEventListener("keydown", this.changeForm)
-      }
-
       showSucces() {
           this.setState((prev) => ({displaySucces: !prev.displaySucces}))
       }
@@ -60,7 +42,7 @@ class App extends React.Component {
           return (
             <div> 
                 <p className={classes.indexDescription}>Вы можете использовать стрелки для навигации.</p>
-                <p className={classes.indexDescription}>Стрелка вправо - следующее слово, влево - предыдущее. Стрелка вверх - показать первод. Стрелка вниз - удалить слово. CTRL - открыть/закрыть форму.</p>
+                <p className={classes.indexDescription}>Стрелка вправо - следующее слово, влево - предыдущее. Стрелка вверх - показать первод. Стрелка вниз - удалить слово.</p>
                 {this.state.displaySucces ? 
                 <Paper elevation={1} className={classes.succes}>
                     <Typography className={classes.succesText} variant="headline" component="h3">Готово!</Typography>
