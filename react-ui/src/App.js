@@ -22,6 +22,10 @@ class App extends React.Component {
           this.showSucces = this.showSucces.bind(this)
       }
 
+      componentDidMount() {
+          this.fetchWords()
+      }
+
       showSucces() {
           this.setState((prev) => ({displaySucces: !prev.displaySucces}))
       }
